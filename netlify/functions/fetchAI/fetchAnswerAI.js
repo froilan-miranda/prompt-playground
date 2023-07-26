@@ -56,7 +56,7 @@ const handler = async (event) => {
 function pushConversation(input) {
   push(conversationInDb, {
     role: 'user',
-    content: userInput.value
+    content: input
   })
 }
 
