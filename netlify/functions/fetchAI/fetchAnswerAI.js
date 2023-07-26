@@ -11,8 +11,8 @@ const appSettings = {
 }
 const openai = new OpenAIApi(configuration)
 
+const app = initializeApp(appSettings)
 const database = getDatabase(app)
-
 const conversationInDb = ref(database)
 
 const instructionObj = {
