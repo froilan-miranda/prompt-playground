@@ -20,7 +20,7 @@ export default function Playground(){
   })
    */
 
-  const fetchPropmtReply = async (e: React.FormEvent<HTMLInputElement>) => {
+  const fetchPropmtReply = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     console.log('ready to fetch')
     const url = 'https://gleaming-entremet-fd05b3.netlify.app/.netlify/functions/fetch-ai-response'
