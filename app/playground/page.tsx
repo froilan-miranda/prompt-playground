@@ -28,7 +28,7 @@ export default function Playground(){
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-      }
+      },
       body: userInput 
     })
     const data = await response.json()
