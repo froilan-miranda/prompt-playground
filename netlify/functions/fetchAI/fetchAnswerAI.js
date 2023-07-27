@@ -22,6 +22,11 @@ const instructionObj = {
 
 
 const handler = async (event) => {
+  return {
+    statusCode: 200,
+    'hello world'
+  }
+    console.log('hello world')
   try {
     pushConversation(event.body)
     get(conversationInDb).then(async (snapshot) => {
