@@ -19,6 +19,14 @@ const instructionObj = {
     role: 'system',
     content: 'You are a helpful assistant.'
 }
+
+
+const headers = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Headers': 'Content-Type',
+  'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE'
+};
+
 const handler = async (event) => {
   try {
     pushConversation(event.body)
@@ -36,6 +44,7 @@ function handleConversationReply(){
           const response =  await fetchOpenAI(conversationArr)
           push(conversationInDb, response.data.choices[0].message)
           return {
+            headers,
             statusCode: 200,
             body: JSON.stringify({ reply: response.data }),
           }
